@@ -27,17 +27,21 @@ Ordered roughly by how often it happens in the wild.
    empty. Pair any decoration with a real intro, links, and contact path.
 9. **Accessibility misses.** Missing alt text; fancy-Unicode headings that screen
    readers spell out as gibberish; motion-heavy GIFs; intro text trapped only inside
-   an image (invisible to search and assistive tech).
+   an image (invisible to search and assistive tech). In the 2026 survey, 47.3% of
+   sampled profiles had at least one missing or empty image alt.
 10. **Vanity metrics that backfire.** Streaks and "code time" cards showing "No
     activity tracked" advertise neglect.
 11. **Mobile / centering fragility.** Wide HTML tables and fixed pixel widths overflow
     on phones; a stray unclosed tag silently left-aligns or hides content.
-12. **Stale automation.** Cron workflows disabled after 60 days of inactivity (do
+12. **No obvious next step.** A profile can look polished and still fail because
+    visitors cannot find an email, LinkedIn, X/Twitter, website, or project link
+    worth clicking. Add a direct path when the user provides one.
+13. **Stale automation.** Cron workflows disabled after 60 days of inactivity (do
     NOT use keepalive hacks — ToS risk), or an empty blog/WakaTime/Spotify feed that
     loudly says "No activity."
-13. **Dead or placeholder links.** 404 cert/talk/project links and empty `#` hrefs
+14. **Dead or placeholder links.** 404 cert/talk/project links and empty `#` hrefs
     are worst on sparse profiles where every line carries weight.
-14. **Fake code in Code-as-Bio.** Trailing commas and unquoted identifiers undercut
+15. **Fake code in Code-as-Bio.** Trailing commas and unquoted identifiers undercut
     the flex for the exact audience that notices.
 
 ## Pre-publish checklist
@@ -48,8 +52,11 @@ Run this before declaring the README done.
       default branch, and it actually renders on the profile page.
 - [ ] The first screen states who you are and what you build in plain, specific prose
       — no "passionate developer" filler.
+- [ ] The chosen archetype is obvious in the first 15 lines, and there is no more
+      than one secondary accent.
 - [ ] Every link is real and verified (GitHub, site, socials, `mailto:`); no `#`, no
       placeholders, no 404s.
+- [ ] A clear contact or next-step path exists if the user provided one.
 - [ ] Exactly one coherent style with at most one accent; not a pile of competing
       widgets.
 - [ ] One consistent badge style and one shared card theme throughout; `hide_border`

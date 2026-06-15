@@ -4,7 +4,7 @@
   <img src="https://github.com/{{USERNAME}}/{{USERNAME}}/raw/{{BRANCH}}/assets/{{HERO_FILE}}" alt="{{DESCRIPTIVE_ALT}}" width="100%" />
 </p>
 
-<h1 align="center">Hi, I'm {{NAME}} <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="28" alt="wave" /></h1>
+<h1 align="center">Hi, I'm {{NAME}} 👋</h1>
 <p align="center">{{ONE_LINE_TAGLINE}}</p>
 
 <p align="center">
@@ -21,5 +21,5 @@
 </p>
 
 <p align="center">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username={{USERNAME}}&show_icons=true&hide_border=true&theme={{THEME}}" alt="stats" />
+  <img height="160" src="https://github-readme-stats.vercel.app/api?username={{USERNAME}}&show_icons=true&hide_border=true&theme={{THEME}}" alt="{{NAME}}'s GitHub stats" />
 </p>

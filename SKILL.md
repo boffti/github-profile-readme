@@ -24,8 +24,10 @@ collaborators, and curious visitors see, so it is worth getting right.
 
 This skill turns "I want a good GitHub profile" into a finished, coherent,
 accessible README in one of nine proven styles — built from the person's real
-work, not generic filler. It was distilled from analyzing 181 popular profile
-READMEs, so the defaults here reflect what actually works at scale, not fashion.
+work, not generic filler. It was refreshed from a 2026 survey of 520 verified
+public profile READMEs (181 curated examples plus 339 profiles found through
+GitHub user search), so the defaults reflect what actually works in the wild, not
+just gallery fashion.
 
 The single most important idea: **a coherent style with real substance beats a
 pile of widgets every time.** Most bad profiles fail not from too little
@@ -40,6 +42,10 @@ Before anything else, make sure the user understands and the setup matches this:
   (`<username>/<username>`).
 - The file is `README.md` on the **default branch**.
 - The repo must be **public**.
+- The `README.md` must live in the repo root and contain content.
+- Managed user accounts cannot use profile READMEs.
+- Older same-name public repos created before July 2020 may need GitHub's manual
+  "Share to profile" flow before the README appears.
 - Note the actual default branch (`main` vs `master`). Any raw image URL that
   hardcodes the wrong branch silently 404s — a top cause of broken hero images.
 
@@ -59,10 +65,11 @@ writing any markdown.
    tolerate.** Read personality cues: playful vs corporate, minimal vs maximal.
    If they're vague, ask 2–3 sharp questions rather than guessing.
 
-2. **Pick exactly one archetype.** Use the decision guidance below and
-   `references/archetypes.md`. Resist mixing more than two styles. When unsure,
-   bias toward *less* — a clean Minimalist or Badge profile never looks bad; a
-   kitchen-sink page usually does.
+2. **Pick exactly one archetype.** Use the decision guidance below,
+   `references/archetypes.md`, and the survey calibration in
+   `references/survey-2026.md`. Resist mixing more than two styles. When unsure,
+   bias toward *less* — a clean Minimalist profile never looks bad; a kitchen-sink
+   page usually does.
 
 3. **Confirm the repo mechanic** (above): name, default branch, public.
 
@@ -73,7 +80,8 @@ writing any markdown.
 5. **Add the link row.** Prefer a tidy centered row of shields.io social badges
    or plain text links. Use real, verified URLs and a `mailto:`. Pick **one**
    badge style (`flat-square` *or* `for-the-badge`, never both) and keep it
-   throughout.
+   throughout. A polished profile without an obvious next step is unfinished, so
+   include at least one direct contact path whenever the user provides one.
 
 6. **Add tech/skills only if relevant.** Group by category, prune to what they
    actually use, one consistent icon/badge style. Skip the 30-logo wall — it
@@ -81,9 +89,10 @@ writing any markdown.
 
 7. **Add dynamic widgets only if they fit the archetype.** Stats card,
    top-languages, streak, etc. Pass the **same theme** and `hide_border=true` to
-   every card so they read as one system. Tuck secondary widgets inside
-   `<details>` so they don't bury the human intro. See `references/tools.md` for
-   each service and its caveats.
+   every card so they read as one system. Default to at most the stats +
+   top-languages pair when activity is part of the story; tuck streaks, trophies,
+   visitor counters, snake graphs, and secondary widgets inside `<details>` or
+   omit them. See `references/tools.md` for each service and its caveats.
 
 8. **Wire automation only if they'll maintain it.** If they want live content
    (blog feed, now-playing, WakaTime), use HTML comment markers plus a
@@ -95,8 +104,8 @@ writing any markdown.
 9. **Polish.** Every `<img>` gets meaningful `alt` text. Black brand glyphs get a
    `<picture>` dark-mode variant. Verify every link and image renders. Check the
    narrow/mobile view. Remove every leftover GitHub default-template comment and —
-   the #1 genre mistake — any *other person's* username, feed URL, or stats URL
-   left in a copied snippet.
+   the #1 genre mistake — any *other person's* username, feed URL, branch, or
+   stats URL left in a copied snippet.
 
 10. **Write install instructions** and preview. See "Installing it" below.
     Always preview in both GitHub light and dark themes before declaring done.
@@ -107,21 +116,40 @@ Map the person along three axes — **maintenance tolerance, personality, and wh
 they want to lead with** — then pick one. Full descriptions, section skeletons,
 and ready templates are in `references/archetypes.md` and `assets/templates/`.
 
-| Archetype | Lead with | Effort | Upkeep | Best for |
-|---|---|---|---|---|
-| **Minimalist / Prose-First** | A few honest sentences | Low | None | Senior/experienced devs; anyone wanting signal over noise. The safest, most timeless default. |
-| **Badge / Icon Card** | Stack + socials at a glance | Low | Low | People who'd rather not write much. The most common real-world style. |
-| **Stats Dashboard** | Live activity cards | Medium | Low | Active daily contributors who want activity as the headline. |
-| **Descriptive Resume** | Narrative bio (About/Skills/Experience) | Medium | Low | Job-hunters with real credentials: roles, talks, papers, certs. |
-| **Code-as-Bio** | An About written as a code snippet | Low | Low | A memorable coder flex in the language they identify with. |
-| **Self-Updating / Automated** | Always-fresh injected content | High | Automated | People who blog/ship/stream often *and* enjoy automation. |
-| **Visual Showcase** | A hero GIF/banner/image | Medium | Low | Visual/design-minded folks; friendly first impression. |
-| **Persona / Themed** | A strong aesthetic (anime, retro, fancy font) | Medium | Low | Those who want personality and accept some pro/accessibility tradeoffs. |
-| **Interactive / Game Mode** | A live playable README | High | Automated | Engineers who explicitly want a showpiece and will maintain a backend. |
+| Archetype | 2026 sample | Lead with | Effort | Upkeep | Best for |
+|---|---:|---|---|---|---|
+| **Minimalist / Prose-First** | 39.6% | A few honest sentences | Low | None | Senior/experienced devs; anyone wanting signal over noise. The safest, most timeless default. |
+| **Visual Showcase** | 15.2% | A hero GIF/banner/image | Medium | Low | Visual/design-minded folks; friendly first impression. |
+| **Stats Dashboard** | 14.0% | Live activity cards | Medium | Low | Active daily contributors who want activity as the headline. |
+| **Self-Updating / Automated** | 12.7% | Always-fresh injected content | High | Automated | People who blog/ship/stream often *and* enjoy automation. |
+| **Badge / Icon Card** | 7.9% | Stack + socials at a glance | Low | Low | People who'd rather not write much. Badges are common as components, but standalone badge walls are less common than minimal prose. |
+| **Code-as-Bio** | 3.7% | An About written as a code snippet | Low | Low | A memorable coder flex in the language they identify with. |
+| **Descriptive Resume** | 3.3% | Narrative bio (About/Skills/Experience) | Medium | Low | Job-hunters with real credentials: roles, talks, papers, certs. |
+| **Persona / Themed** | 1.9% | A strong aesthetic (anime, retro, fancy font) | Medium | Low | Those who want personality and accept some pro/accessibility tradeoffs. |
+| **Interactive / Game Mode** | 1.7% | A live playable README | High | Automated | Engineers who explicitly want a showpiece and will maintain a backend. |
 
-**Quick rule by time budget:** none → Minimalist or Badge. Some → Stats,
-Descriptive, or Code-as-Bio. Lots/ongoing → Self-Updating or Interactive. Pick
-one primary style and at most one secondary accent.
+**Quick rule by time budget:** none → Minimalist. Low but visual → Badge or
+Visual. Some → Stats, Descriptive, or Code-as-Bio. Lots/ongoing →
+Self-Updating or Interactive. Pick one primary style and at most one secondary
+accent.
+
+## Survey-calibrated defaults
+
+The 2026 survey found that Minimalist / Prose-First profiles were the largest
+bucket, while images, badges, and stats were common components across multiple
+styles. That changes the default stance:
+
+- If the prompt is vague, start from a specific prose intro, contact row, and
+  compact stack. Add widgets only after the user's goal justifies them.
+- Treat Visual Showcase, Stats Dashboard, and Self-Updating as explicit choices,
+  not automatic "level up" moves.
+- Keep the first 15 lines decisive: name, role, what they build, and where a
+  visitor should go next.
+- Use `<details>` more aggressively than the wild baseline. It keeps optional
+  proof available without making the first screen a widget pile.
+- Audit accessibility harder than the average profile: the survey found missing
+  or empty image alt text in 47.3% of sampled READMEs, so generated output should
+  clearly beat that baseline.
 
 ## Building blocks
 
@@ -191,6 +219,9 @@ Give the person these exact steps (adapt for CLI vs web):
 - `references/archetypes.md` — the nine styles in depth: definition, who it's for,
   section skeleton, and signature techniques per style. Read when choosing or
   drafting.
+- `references/survey-2026.md` — the 520-profile survey: methodology,
+  distribution, feature incidence, and quality gates. Read when calibrating a
+  recommendation or explaining why less is often better.
 - `references/techniques.md` — the building-block catalog with copy-paste snippets
   and adoption notes. Read when assembling the body.
 - `references/tools.md` — every third-party service with URL, purpose, and caveats.

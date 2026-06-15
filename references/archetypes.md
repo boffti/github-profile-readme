@@ -1,20 +1,36 @@
 # Archetypes
 
-Nine profile styles, distilled from 181 popular profile READMEs. Pick **one**
-primary (and at most one secondary accent). Each entry gives the definition, who
-it suits, the section skeleton (top to bottom), the signature techniques, and the
-traps specific to that style. A ready-to-fill starter for each lives in
-`../assets/templates/`.
+Nine profile styles, refreshed from a 2026 survey of 520 verified public profile
+READMEs. Pick **one** primary archetype and at most one secondary accent. Each
+entry gives the definition, who it suits, the section skeleton (top to bottom),
+the signature techniques, and the traps specific to that style. A ready-to-fill
+starter for each lives in `../assets/templates/`.
 
-Adoption note: across the sample, the most common real-world styles are **Badge /
-Icon Card** and **Minimalist** — not the flashy ones. Flash is memorable when
-done well and embarrassing when done badly. Default toward restraint.
+Adoption note: in the 520-profile survey, **Minimalist / Prose-First** was the
+largest bucket at 39.6%. Visual, Stats, and Self-Updating profiles were common
+secondary clusters, while Persona and Interactive profiles were rare showpieces.
+Badges appeared often as components, but standalone badge-wall profiles were not
+the dominant style. Flash is memorable when done well and embarrassing when done
+badly. Default toward restraint.
+
+| Archetype | 2026 sample share |
+|---|---:|
+| Minimalist / Prose-First | 39.6% |
+| Visual Showcase | 15.2% |
+| Stats Dashboard | 14.0% |
+| Self-Updating / Automated | 12.7% |
+| Badge / Icon Card | 7.9% |
+| Code-as-Bio | 3.7% |
+| Descriptive Resume | 3.3% |
+| Persona / Themed | 1.9% |
+| Interactive / Game Mode | 1.7% |
 
 ---
 
 ## 1. Minimalist / Prose-First
 
-**Template:** `minimalist.md` · **Effort:** low · **Upkeep:** none
+**Template:** `minimalist.md` · **Effort:** low · **Upkeep:** none · **2026
+sample:** 39.6%
 
 A restrained, text-first README: a quiet heading, one to three lines of real
 prose, a short bullet list, a handful of links. Deliberately skips the wall of
@@ -23,6 +39,8 @@ experienced developers, and a clean minimal profile *never* looks bad.
 
 **Best for:** senior devs, designers, OSS maintainers; anyone who values signal
 over noise and would rather state their work in a sentence than show 30 badges.
+Also use it as the default when a user is vague, busy, senior, or skeptical of
+animation and vanity metrics.
 
 **Skeleton:**
 1. Greeting + name (H3/H4, optional small wave emoji — not H1, which is loud)
@@ -45,11 +63,13 @@ GitHub's default template comments in.
 
 ## 2. Badge / Icon Card
 
-**Template:** `badge-card.md` · **Effort:** low · **Upkeep:** low
+**Template:** `badge-card.md` · **Effort:** low · **Upkeep:** low · **2026
+sample:** 7.9% standalone; badges appeared in 41.3% of profiles.
 
 Identity carried by tidy rows of shields.io badge chips and brand-logo icons:
 social links plus tech stack, scannable at a glance, no writing required, no
-GitHub Action needed. The most common real-world style.
+GitHub Action needed. Badges are a common building block even when the whole
+profile is not a Badge / Icon Card archetype.
 
 **Best for:** people who'd rather not write much but want to communicate stack and
 contact clearly; students through sysadmins to researchers (ORCID/ResearchGate
@@ -79,7 +99,8 @@ dead counter services (prefer komarev).
 
 ## 3. Stats Dashboard
 
-**Template:** `stats-dashboard.md` · **Effort:** medium · **Upkeep:** low
+**Template:** `stats-dashboard.md` · **Effort:** medium · **Upkeep:** low ·
+**2026 sample:** 14.0%
 
 A centered hero plus live SVG cards: github-readme-stats, top languages, streak,
 trophies. The page broadcasts activity. Powerful for someone genuinely active —
@@ -88,6 +109,8 @@ liability, so warn the user.
 
 **Best for:** active daily contributors who want activity to be the headline and
 are comfortable wiring third-party image APIs (and ideally self-hosting them).
+Use it only when GitHub activity helps the user's story; otherwise keep stats in
+`<details>`.
 
 **Skeleton:**
 1. Centered header (hero or typing SVG with name + tagline)
@@ -113,7 +136,8 @@ palette, same theme on every card); stat-card overload (collapse extras in
 
 ## 4. Descriptive Resume
 
-**Template:** `descriptive-resume.md` · **Effort:** medium · **Upkeep:** low
+**Template:** `descriptive-resume.md` · **Effort:** medium · **Upkeep:** low ·
+**2026 sample:** 3.3%
 
 A biography-first README that reads like a narrative resume: About, Skills,
 Experience, Projects, Talks, Certifications. Substance and verified links matter
@@ -122,6 +146,8 @@ more than flair here. This is the style for someone whose *story* sells them.
 **Best for:** job-seekers with real credentials (roles, talks, papers, certs);
 ML/community/specialist devs; mentors and speakers; anyone whose accomplishments
 matter more than decoration.
+It is less common in the wild than its usefulness suggests, so choose it when the
+user has proof links and recruiter readability is the goal.
 
 **Skeleton:**
 1. Greeting + one-line self-description
@@ -150,7 +176,8 @@ typos read as careless.
 
 ## 5. Code-as-Bio
 
-**Template:** `code-as-bio.md` · **Effort:** low · **Upkeep:** low
+**Template:** `code-as-bio.md` · **Effort:** low · **Upkeep:** low · **2026
+sample:** 3.7%
 
 The About section written as a syntactically plausible code snippet — a JS object,
 Python class, or CSS rule whose keys are profile facts. A memorable coder flex,
@@ -186,7 +213,7 @@ the block; copy-paste leftovers (scrub every key and URL to their handle).
 ## 6. Self-Updating / Automated
 
 **Template:** `self-updating.md` + `self-updating-workflow.yml` · **Effort:** high
-· **Upkeep:** automated
+· **Upkeep:** automated · **2026 sample:** 12.7%
 
 Content kept fresh by scheduled GitHub Actions that inject live data (blog posts,
 releases, WakaTime, now-playing) between HTML comment markers, so the page reads
@@ -195,6 +222,8 @@ feeds alive — and understands the 60-day cron caveat.
 
 **Best for:** people who blog/ship/stream regularly and enjoy automation as a
 demonstration of skill in itself.
+Do not choose it just because the user wants the page to "look alive"; choose it
+because they have real feeds and will maintain the workflow.
 
 **Skeleton:**
 1. Header / greeting (name, role, tagline)
@@ -223,7 +252,8 @@ Spotify tokens) fail every run; widget overload + rate-limited endpoints.
 
 ## 7. Visual Showcase (GIF / Banner / Image)
 
-**Template:** `visual-showcase.md` · **Effort:** medium · **Upkeep:** low
+**Template:** `visual-showcase.md` · **Effort:** medium · **Upkeep:** low ·
+**2026 sample:** 15.2%
 
 Visual identity carried by one or a few large assets: an animated hero GIF, a
 hand-designed banner, or a skills graphic — almost always centered — wrapped
@@ -232,6 +262,8 @@ fast. Works minimal (one GIF + links) or maximal.
 
 **Best for:** designers and visually-minded devs; students and early-career devs
 who want a warm first impression and can supply or generate an asset.
+The 2026 survey found images in 78.8% of profiles and missing or empty alt text in
+47.3%, so this style must be stricter than the wild baseline about accessibility.
 
 **Skeleton:**
 1. Centered hero/banner GIF or image (with a one-line title above, optional)
@@ -258,7 +290,8 @@ text trapped only inside an image (invisible to search/screen readers).
 
 ## 8. Persona / Themed (Anime, Retro, Fancy-Font)
 
-**Template:** `persona-themed.md` · **Effort:** medium · **Upkeep:** low
+**Template:** `persona-themed.md` · **Effort:** medium · **Upkeep:** low ·
+**2026 sample:** 1.9%
 
 A strong aesthetic persona — an anime character card, Web 1.0 / GeoCities
 nostalgia (guestbook, hit counter, "best viewed in IE"), or Unicode fancy-font
@@ -268,6 +301,8 @@ tradeoffs knowingly.
 **Best for:** those who want a memorable identity statement over corporate polish:
 anime/gamer/kawaii identities, web-nostalgia humorists, design-leaning devs who
 want styled text with no HTML.
+Do not classify ordinary emoji use as Persona / Themed. This style needs a clear
+aesthetic premise.
 
 **Skeleton (anime variant):** hero character art (centered or float-right) →
 themed greeting → persona one-liner → About as a character stat-block → hobbies =
@@ -295,7 +330,7 @@ GIF/SVG); stale/unmoderated guestbook invites spam.
 ## 9. Interactive / Game Mode
 
 **Template:** none (showpiece — build bespoke) · **Effort:** high · **Upkeep:**
-automated
+automated · **2026 sample:** 1.7%
 
 The README is a live, multiplayer experience: chess, Connect Four, a guestbook, an
 `npx` card. Visitors make a move via a pre-filled GitHub Issue, and a backend

@@ -1,10 +1,11 @@
 # Technique catalog
 
-Copy-pasteable building blocks with placeholders (`{{LIKE_THIS}}`). Each notes its
-real-world adoption (from the 181-profile sample) so you can tell common/safe from
+Copy-pasteable building blocks with placeholders (`{{LIKE_THIS}}`). Adoption notes
+come from the 2026 survey of 520 verified public profile READMEs unless a block
+says it was not separately measured. Use the numbers to tell common/safe from
 niche/flashy. Replace **every** placeholder, and never leave another person's
-handle, feed, or theme in a pasted block. For the services these depend on and
-their caveats, see `tools.md`.
+handle, feed, branch, or theme in a pasted block. For the services these depend on
+and their caveats, see `tools.md`.
 
 General rule GitHub markdown enforces: **CSS is ignored.** Only `<p align="center">`,
 `<div align="center">`, HTML tables, `width`/`height` attributes, and `<br>`
@@ -31,7 +32,7 @@ actually affect layout. `<marquee>`, `<blink>`, and `style="..."` are stripped.
 ---
 
 ## Centered wrapper
-*~52% adoption.* GitHub honors `<p align="center">` / `<div align="center">` for
+*42.9% adoption.* GitHub honors `<p align="center">` / `<div align="center">` for
 alignment — reserve it for art, headers, and badge rows. Keep dense prose
 left-aligned; centered paragraphs are hard to read.
 ```html
@@ -41,8 +42,9 @@ left-aligned; centered paragraphs are hard to read.
 ```
 
 ## Social badge row
-*~50% adoption — the single most common block.* Wrap each badge in a link. Pick one
-`style` and set `logoColor` so logos stay visible on dark chips.
+Contact rows are common but inconsistent: 45.6% of sampled profiles linked
+LinkedIn, 35.2% linked X/Twitter, and 21.5% exposed email. Wrap each badge in a
+link. Pick one `style` and set `logoColor` so logos stay visible on dark chips.
 ```markdown
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/{{LINKEDIN}}/)
 [![X](https://img.shields.io/badge/-X-000000?style=flat-square&logo=x&logoColor=white)](https://x.com/{{HANDLE}})
@@ -50,8 +52,9 @@ left-aligned; centered paragraphs are hard to read.
 ```
 
 ## Emoji identity bullets
-*~39% adoption.* GitHub's default scaffold, filled with real content. Keep 3–6
-specific lines; delete any unfilled placeholder.
+Common default-scaffold pattern, but not separately measured in the 2026 survey.
+Use only when the bullets are specific. Keep 3–6 lines; delete any unfilled
+placeholder.
 ```markdown
 - 🔭 I'm currently working on **{{CURRENT_PROJECT}}**
 - 🌱 I'm currently learning **{{LEARNING}}**
@@ -60,9 +63,10 @@ specific lines; delete any unfilled placeholder.
 ```
 
 ## Hero image / GIF banner
-*65/181 use GIFs; 135/181 use `<img>`.* Host critical assets in-repo (raw URL,
-correct branch) rather than hotlinking Giphy/imgur. Always set `alt` and a width
-cap.
+*78.8% used at least one image; 24.0% used GIF/WebP media.* Host critical assets
+in-repo (raw URL, correct branch) rather than hotlinking Giphy/imgur. Always set
+`alt` and a width cap. The survey found missing or empty alt text in 47.3% of
+sampled profiles, so this is where generated output can beat the baseline.
 ```html
 <p align="center">
   <img src="https://github.com/{{USERNAME}}/{{USERNAME}}/raw/{{BRANCH}}/assets/{{FILE}}" alt="{{DESCRIPTIVE_ALT}}" width="100%" />
@@ -70,9 +74,9 @@ cap.
 ```
 
 ## GitHub stats cards
-*~37% stats, ~18% top-langs.* Pass the **same `theme` + `hide_border=true`** to
-every card for coherence. The public instance rate-limits — self-host for anything
-load-bearing.
+*37.7% used a stats-family widget; 21.5% used top-langs.* Pass the **same `theme`
+plus `hide_border=true`** to every card for coherence. The public instance
+rate-limits — self-host for anything load-bearing.
 ```html
 <p align="center">
   <img height="165" src="https://github-readme-stats.vercel.app/api?username={{USERNAME}}&show_icons=true&hide_border=true&theme={{THEME}}" alt="{{NAME}}'s GitHub stats" />
@@ -81,8 +85,10 @@ load-bearing.
 ```
 
 ## Tech-stack badge wall
-Group by category, prune to what you actually use. `?logo=` must be the exact
-Simple Icons slug or the icon silently drops. A blank line starts a new row.
+Badges appeared in 41.3% of sampled profiles, but 23.5% had 10 or more badge
+images. Group by category, prune to what you actually use, and avoid turning
+every tool ever touched into a visible chip. `?logo=` must be the exact Simple
+Icons slug or the icon silently drops. A blank line starts a new row.
 ```markdown
 **Languages**
 
@@ -95,7 +101,7 @@ Simple Icons slug or the icon silently drops. A blank line starts a new row.
 ```
 
 ## skillicons.dev row
-*~4% adoption, but the lowest-effort whole-stack row:* one URL, consistent icons. A
+*2.5% adoption, but the lowest-effort whole-stack row:* one URL, consistent icons. A
 good lightweight alternative to a 12-badge wall.
 ```html
 <p align="center">
@@ -104,8 +110,9 @@ good lightweight alternative to a 12-badge wall.
 ```
 
 ## Collapsible details
-*~17% adoption.* The clean way to offer depth without burying the human intro. Use
-for secondary stats, long work history, extra widgets.
+*9.0% adoption, underused.* The clean way to offer depth without burying the human
+intro. Use for secondary stats, long work history, extra widgets, exhaustive tech
+lists, and automation logs.
 ```html
 <details>
   <summary>📈 GitHub Stats</summary>
@@ -115,6 +122,7 @@ for secondary stats, long work history, extra widgets.
 ```
 
 ## Code-as-bio block
+*3.7% Code-as-Bio archetype; 9.6% used at least one code fence.*
 Keep it valid (quoted strings, no undeclared identifiers) or knowingly stylized —
 the audience that likes this notices broken syntax. Links inside code blocks are
 **not** clickable, so keep real contact links in a badge row outside.
@@ -129,7 +137,7 @@ const {{USERNAME}} = {
 ```
 
 ## Theme-aware image
-*Only ~2% adoption, but a quality marker.* Black brand glyphs (GitHub, X, Threads,
+*Only 3.3% adoption, but a quality marker.* Black brand glyphs (GitHub, X, Threads,
 Apple) vanish on GitHub dark mode without this. Worth adding for any dark logo.
 ```html
 <picture>
@@ -139,14 +147,14 @@ Apple) vanish on GitHub dark mode without this. Worth adding for any dark logo.
 ```
 
 ## Visitor counter
-*~28% adoption.* A harmless social-proof flourish. Prefer maintained endpoints
+*21.9% adoption.* A harmless social-proof flourish. Prefer maintained endpoints
 (komarev) over dead ones (pufler.dev, glitch). A low count can read as neglect.
 ```markdown
 ![Profile views](https://komarev.com/ghpvc/?username={{USERNAME}}&label=Profile%20views&color=0e75b6&style=flat-square)
 ```
 
 ## Typing-SVG headline
-*Only ~3% adoption despite being well-known — use sparingly.* Keep 3–5 short lines,
+*5.6% adoption despite being well-known — use sparingly.* Keep 3–5 short lines,
 ~1000ms pause. Carry the intro in `alt` (the animation is invisible to screen
 readers); tune colors for both themes.
 ```html
@@ -156,17 +164,19 @@ readers); tune colors for both themes.
 ```
 
 ## Streak / trophy cards
-*~8% each.* Vanity metrics that embarrass you when activity drops ("No activity
-tracked"). Only feature what you'll keep feeding. Theme-match to your other cards.
+*11.0% streak, 7.9% trophy.* Vanity metrics that embarrass you when activity drops
+("No activity tracked"). Only feature what you'll keep feeding. Theme-match to
+your other cards.
 ```html
 <img src="https://github-readme-streak-stats.herokuapp.com/?user={{USERNAME}}&hide_border=true&theme={{THEME}}" alt="contribution streak" />
 <img src="https://github-profile-trophy.vercel.app/?username={{USERNAME}}&theme={{THEME}}&no-frame=true&row=1" alt="trophies" />
 ```
 
 ## Auto-update markers + Action
-*~9% RSS adoption.* START/END text must match the Action's expected markers
-*exactly*. Cron workflows are disabled after 60 days of repo inactivity — do **not**
-use keepalive hacks (ToS risk). Set required secrets. See
+*12.7% Self-Updating archetype; 5.8% blog/RSS block.* START/END text must match
+the Action's expected markers *exactly*. Cron workflows are disabled after 60 days
+of repo inactivity — do **not** use keepalive hacks (ToS risk). Set required
+secrets. See
 `../assets/templates/self-updating-workflow.yml`.
 ```markdown
 ### 📝 Latest blog posts
@@ -177,7 +187,7 @@ use keepalive hacks (ToS risk). Set required secrets. See
 ```
 
 ## Two-column table dashboard
-*~15% adoption.* Turns a long scroll into a scannable dashboard and splits big
+*15.6% adoption.* Turns a long scroll into a scannable dashboard and splits big
 badge walls into labeled groups. Wide tables overflow on mobile — test the narrow
 view.
 ```html
@@ -196,6 +206,7 @@ view.
 ```
 
 ## Move-as-Issue link
+*2.7% used issue links; 1.7% classified as Interactive / Game Mode.*
 Zero-code visitor input: a pre-filled Issue whose title an Action parses. Tell
 visitors to submit the title **unedited** or the parser breaks. Powers games and
 guestbooks; the visitor must be logged in.

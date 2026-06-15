@@ -2,12 +2,12 @@
 
 A [Claude](https://claude.com/claude-code) **skill** that builds a great GitHub *profile* README — the special `README.md` in the repo named after your username (`github.com/<you>/<you>`) that renders at the top of your profile page.
 
-It was distilled from analyzing **181 popular profile READMEs** across 16 styles, so its defaults reflect what actually works at scale rather than whatever is trending. Instead of dumping every widget onto the page, it interviews you, picks **one coherent archetype** that fits your goals and how much upkeep you'll tolerate, drafts real markdown from your actual work, wires any dynamic widgets correctly, and gives you exact install steps.
+It was refreshed from a 2026 live survey of **520 verified public profile READMEs** across curated examples and GitHub user search, so its defaults reflect what actually works in the wild rather than whatever is trending. Instead of dumping every widget onto the page, it interviews you, picks **one coherent archetype** that fits your goals and how much upkeep you'll tolerate, drafts real markdown from your actual work, wires any dynamic widgets correctly, and gives you exact install steps.
 
 ## What's inside
 
 - **`SKILL.md`** — the skill itself: the workflow, the archetype picker, and the principles.
-- **`references/`** — load-on-demand depth: the nine archetypes, a copy-paste technique catalog, a tools reference with caveats, and a pitfalls + pre-publish checklist.
+- **`references/`** — load-on-demand depth: the nine archetypes, the 520-profile survey, a copy-paste technique catalog, a tools reference with caveats, and a pitfalls + pre-publish checklist.
 - **`assets/templates/`** — a ready-to-fill starter for each archetype (plus an Actions workflow for the self-updating style).
 - **`scripts/build_widgets.py`** — generates consistent, theme-matched widget markdown (badges, stats cards, tech stack, typing SVG) from simple flags.
 
